@@ -7,14 +7,13 @@ function TodoList() {
 
   function handleChange(e) {
     setInputValue(e.target.value);
-    // Reset error state when user starts typing
     setError(false);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!inputValue.trim()) {
-      setError(true); // Set error state if input is empty
+      setError(true); 
       return;
     }
     setTodos([...todos, { text: inputValue, done: false }]);
@@ -32,7 +31,6 @@ function TodoList() {
     setTodos(newTodos);
   }
 
-  // Calculate counts of ongoing tasks and done tasks
   const ongoingTasksCount = todos.filter(todo => !todo.done).length;
   const doneTasksCount = todos.filter(todo => todo.done).length;
 
@@ -45,13 +43,12 @@ function TodoList() {
           placeholder="Anything to do today?"
           value={inputValue}
           onChange={handleChange}
-          style={{ marginRight: "8px", border: error ? "2px solid red" : "none" }} // Add error style if input is empty
+          style={{ marginRight: "8px", border: error ? "2px solid red" : "none" }}
         />
         <button className="add-button" type="submit">Add</button>
       </form>
-      {error && <p style={{ color: "red" }}>Please add todo item first.</p>} {/* Display error message if input is empty */}
+      {error && <p style={{ color: "red" }}>Please add todo item first.</p>} 
       
-      {/* Render "Ongoing Tasks" list if there are any ongoing tasks */}
       {ongoingTasksCount > 0 && (
         <div>
           <h2>Ongoing Tasks ({ongoingTasksCount})</h2>
@@ -73,7 +70,6 @@ function TodoList() {
         </div>
       )}
 
-      {/* Render "Done Tasks" list if there are any done tasks */}
       {doneTasksCount > 0 && (
         <div>
           <h2>Done Tasks ({doneTasksCount})</h2>
