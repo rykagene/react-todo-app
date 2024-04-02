@@ -18,7 +18,6 @@
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424; */
   min-width: 320px;
   min-height: 100vh;
   display: flex;
@@ -99,7 +98,7 @@ li {
   background-color: #646cff;
 }
 
-/* Shake animation for error indication */
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
@@ -108,19 +107,16 @@ li {
   100% { transform: translateX(0); }
 }
 
-/* Error input style */
 .error-input {
   border: 1px solid red;
   animation: shake 0.3s ease;
 }
 
-/* Error button style */
 .error-button {
   border: 1px solid red;
   animation: shake 0.3s ease;
 }
 
-/* Error message style */
 .error-message {
   color: red;
   margin-top: 5px;
